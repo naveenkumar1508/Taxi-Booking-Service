@@ -1,10 +1,7 @@
 package com.example.GetRide.model;
 
 import com.example.GetRide.Enum.CabType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,4 +25,8 @@ public class Cab {
     private double farePerKm;
 
     private  boolean booked;
+
+    @OneToOne
+    @JoinColumn
+    private Driver driver;
 }

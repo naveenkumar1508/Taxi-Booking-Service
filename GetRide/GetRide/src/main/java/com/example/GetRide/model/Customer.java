@@ -1,11 +1,11 @@
 package com.example.GetRide.model;
 
+import com.example.GetRide.Enum.BookingStatus;
 import com.example.GetRide.Enum.Gender;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -13,6 +13,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "customer")
+@Builder
 public class Customer {
 
     @Id
@@ -26,4 +27,7 @@ public class Customer {
 
     @Enumerated(EnumType.STRING)
     private Gender gender;
+
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    private List<Booking> bookings;
 }
