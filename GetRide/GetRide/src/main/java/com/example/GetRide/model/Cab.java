@@ -2,16 +2,14 @@ package com.example.GetRide.model;
 
 import com.example.GetRide.Enum.CabType;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 @Entity
+@Builder
 public class Cab {
 
     @Id

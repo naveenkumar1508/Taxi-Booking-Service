@@ -1,10 +1,8 @@
 package com.example.GetRide.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +12,7 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
+@Builder
 public class Driver {
 
     @Id
@@ -31,8 +30,10 @@ public class Driver {
     private long mobileNumber;
 
     @OneToOne(mappedBy = "driver", cascade = CascadeType.ALL)
+    @JsonIgnore
     private Cab cab;
 
     @OneToMany(mappedBy = "driver", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Booking> bookings = new ArrayList<>();
 }

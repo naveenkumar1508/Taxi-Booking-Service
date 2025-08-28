@@ -1,10 +1,7 @@
 package com.example.GetRide.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -12,6 +9,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "coupon")
+@Builder
 public class Coupon {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
