@@ -2,10 +2,7 @@ package com.example.GetRide.model;
 
 import com.example.GetRide.Enum.BookingStatus;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.util.Date;
@@ -15,6 +12,7 @@ import java.util.Date;
 @Getter
 @Setter
 @Entity
+@Builder
 public class Booking {
 
     @Id

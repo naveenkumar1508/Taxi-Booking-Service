@@ -32,6 +32,6 @@ public class DriverService {
     public DriverResponse getDriver(long mobileNumber) {
         Driver savedDriver = driverRepository.findByMobileNumber(mobileNumber);
         //entity to response dto
-        return DriverTransformer.DriverToDriverResponse(savedDriver);
+        return DriverTransformer.driverToDriverResponse(savedDriver);
     }
 }

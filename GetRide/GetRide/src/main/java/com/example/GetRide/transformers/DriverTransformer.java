@@ -15,7 +15,7 @@ public class DriverTransformer {
                 .build();
     }
 
-    public static DriverResponse DriverToDriverResponse(Driver driver) {
+    public static DriverResponse driverToDriverResponse(Driver driver) {
         return DriverResponse.builder()
                 .mobileNumber(driver.getMobileNumber())
                 .name(driver.getName())
